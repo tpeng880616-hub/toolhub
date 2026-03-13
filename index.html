@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolHub - 移动端工具箱 | 免费在线工具集合</title>
+    <meta name="description" content="ToolHub精选移动端实用工具，涵盖文件传输、格式转换、图像处理等小众但高需求的在线工具。完全免费，无需下载，打开即用。">
+    <meta name="keywords" content="移动端工具, 在线工具, 手机工具, 文件传输工具, 格式转换, 图像处理, 实用工具">
+    <meta name="author" content="ToolHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://your-domain.github.io/toolhub/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ToolHub - 移动端工具箱">
+    <meta property="og:description" content="精选移动端实用工具，涵盖文件传输、格式转换、图像处理等小众但高需求的在线工具">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.github.io/toolhub/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ToolHub - 移动端工具箱">
+    <meta name="twitter:description" content="精选移动端实用工具，涵盖文件传输、格式转换等">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ToolHub",
+        "url": "https://your-domain.github.io/toolhub/",
+        "description": "移动端实用工具合集网站",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://your-domain.github.io/toolhub/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID" crossorigin="anonymous"></script>
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Ad Space - Top */
+        .ad-space-top {
+            background: #f1f5f9;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: var(--bg);
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        /* Category */
+        .category {
+            margin-bottom: 3rem;
+        }
+        
+        .category h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+        
+        .category-desc {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .tool-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .tool-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .tool-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tool-card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tag {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+        }
+        
+        .tool-link {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        
+        .tool-link:hover {
+            background: #1d4ed8;
+        }
+        
+        /* Ad Space - Middle */
+        .ad-space {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 12px;
+            margin: 2rem 0;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ad-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: white;
+        }
+        
+        /* Sitemap for SEO */
+        .sitemap {
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: left;
+        }
+        
+        .sitemap h3 {
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .sitemap ul {
+            list-style: none;
+        }
+        
+        .sitemap li {
+            margin: 0.5rem 0;
+        }
+        
+        .sitemap a {
+            color: var(--primary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google AdSense Ad Space -->
+    <div class="ad-space-top">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+             data-ad-slot="YOUR_AD_SLOT"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    
+    <header>
+        <h1>🔧 ToolHub</h1>
+        <p>移动端实用工具箱 | 精选小众但高需求的在线工具</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#file-transfer" class="active">文件传输</a></li>
+            <li><a href="#format-convert">格式转换</a></li>
+            <li><a href="#image-tools">图像处理</a></li>
+            <li><a href="#document-tools">文档处理</a></li>
+            <li><a href="#network-tools">网络工具</a></li>
+            <li><a href="#productivity">效率工具</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <!-- 文件传输 -->
+        <section id="file-transfer" class="category">
+            <h2>📤 文件传输</h2>
+            <p class="category-desc">手机与电脑之间快速传输文件，无需数据线</p>
+            
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <h3>Snapdrop</h3>
+                    <p>基于Web的局域网文件传输工具，浏览器打开即可使用，支持跨设备传输</p>
+                    <div class="tags">
+                        <span class="tag">无需安装</span>
+                        <span class="tag">局域网传输</span>
+                    </div>
+                    <a href="https://snapdrop.net/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>ToffeeShare</h3>
+                    <p>点对点文件传输工具，支持大文件，传输速度快</p>
+                    <div class="tags">
+                        <span class="tag">P2P传输</span>
+                        <span class="tag">大文件</span>
+                    </div>
+                    <a href="https://toffeeshare.com/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>DropMe</h3>
+                    <p>临时文件分享工具，支持设置过期时间</p>
+                    <div class="tags">
+                        <span class="tag">临时分享</span>
+                        <span class="tag">加密传输</span>
+                    </div>
+                    <a href="https://dropme.io/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>FileSta</h3>
+                    <p>手机与电脑互传文件的在线工具</p>
+                    <div class="tags">
+                        <span class="tag">扫码传输</span>
+                        <span class="tag">简单易用</span>
+                    </div>
+                    <a href="https://filesta.com/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+            </div>
+        </section>
+        
+        <!-- 格式转换 -->
+        <section id="format-convert" class="category">
+            <h2>🔄 格式转换</h2>
+            <p class="category-desc">各种文件格式在线转换，无需安装软件</p>
+            
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <h3>Convertio</h3>
+                    <p>支持300+种格式转换，图片、文档、音频、视频全覆盖</p>
+                    <div class="tags">
+                        <span class="tag">多格式</span>
+                        <span class="tag">批量转换</span>
+                    </div>
+                    <a href="https://convertio.co/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>Zamzar</h3>
+                    <p>老牌在线转换工具，支持邮件通知转换结果</p>
+                    <div class="tags">
+                        <span class="tag">邮件通知</span>
+                        <span class="tag">稳定可靠</span>
+                    </div>
+                    <a href="https://www.zamzar.com/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>CloudConvert</h3>
+                    <p>专业级格式转换，支持200+格式，可自定义转换参数</p>
+                    <div class="tags">
+                        <span class="tag">专业级</span>
+                        <span class="tag">API支持</span>
+                    </div>
+                    <a href="https://cloudconvert.com/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+            </div>
+        </section>
+        
+        <!-- 图像处理 -->
+        <section id="image-tools" class="category">
+            <h2>🖼️ 图像处理</h2>
+            <p class="category-desc">手机端轻量级图像处理工具</p>
+            
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <h3>Compress-Or-Die</h3>
+                    <p>图片压缩工具，支持有损/无损压缩，可调节压缩比</p>
+                    <div class="tags">
+                        <span class="tag">图片压缩</span>
+                        <span class="tag">质量可控</span>
+                    </div>
+                    <a href="https://compress-or-die.com/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>Remove.bg Mobile</h3>
+                    <p>AI自动抠图，移动端也能轻松去除背景</p>
+                    <div class="tags">
+                        <span class="tag">AI抠图</span>
+                        <span class="tag">移动端友好</span>
+                    </div>
+                    <a href="https://www.remove.bg/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>Squoosh</h3>
+                    <p>Google推出的图片压缩工具，支持多种格式和压缩算法</p>
+                    <div class="tags">
+                        <span class="tag">Google出品</span>
+                        <span class="tag">离线可用</span>
+                    </div>
+                    <a href="https://squoosh.app/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>ExifRemove</h3>
+                    <p>在线移除图片EXIF信息，保护隐私</p>
+                    <div class="tags">
+                        <span class="tag">隐私保护</span>
+                        <span class="tag">批量处理</span>
+                    </div>
+                    <a href="https://exifremove.com/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Ad Space - Middle -->
+        <div class="ad-space">
+            <div>
+                <div class="ad-label">Advertisement</div>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+        
+        <!-- 文档处理 -->
+        <section id="document-tools" class="category">
+            <h2>📄 文档处理</h2>
+            <p class="category-desc">移动端文档编辑与转换工具</p>
+            
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <h3>iLovePDF</h3>
+                    <p>PDF在线处理神器，合并、拆分、压缩、加密一应俱全</p>
+                    <div class="tags">
+                        <span class="tag">PDF处理</span>
+                        <span class="tag">完全免费</span>
+                    </div>
+                    <a href="https://www.ilovepdf.com/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>SmallPDF</h3>
+                    <p>简洁的PDF工具网站，易用性极佳</p>
+                    <div class="tags">
+                        <span class="tag">PDF处理</span>
+                        <span class="tag">界面简洁</span>
+                    </div>
+                    <a href="https://smallpdf.com/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>Docpose</h3>
+                    <p>PDF签名工具，支持电子签名</p>
+                    <div class="tags">
+                        <span class="tag">电子签名</span>
+                        <span class="tag">移动端</span>
+                    </div>
+                    <a href="https://docpose.com/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+            </div>
+        </section>
+        
+        <!-- 网络工具 -->
+        <section id="network-tools" class="category">
+            <h2>🌐 网络工具</h2>
+            <p class="category-desc">开发者和普通用户都需要的小工具</p>
+            
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <h3>QR Code Generator</h3>
+                    <p>二维码生成器，支持网址、文本、Wifi等多种类型</p>
+                    <div class="tags">
+                        <span class="tag">二维码</span>
+                        <span class="tag">无需注册</span>
+                    </div>
+                    <a href="https://www.qrcode-generator.de/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>URL Shortener</h3>
+                    <p>短链接生成服务追踪访问数据</p>
+                    <div class="tags">
+                        <span class="tag">短链接</span>
+                        <span class="tag">数据分析</span>
+                    </div>
+                    <a href="https://bitly.com/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>JSON Formatter</h3>
+                    <p>在线JSON格式化、验证和压缩工具</p>
+                    <div class="tags">
+                        <span class="tag">开发者</span>
+                        <span class="tag">JSON</span>
+                    </div>
+                    <a href="https://jsonformatter.org/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+            </div>
+        </section>
+        
+        <!-- 效率工具 -->
+        <section id="productivity" class="category">
+            <h2>⚡ 效率工具</h2>
+            <p class="category-desc">提升工作和生活效率的实用小工具</p>
+            
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <h3>Typefully</h3>
+                    <p>Twitter/X线程写作工具，支持定时发布</p>
+                    <div class="tags">
+                        <span class="tag">社交媒体</span>
+                        <span class="tag">定时发布</span>
+                    </div>
+                    <a href="https://typefully.com/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>Notion QR Code</h3>
+                    <p>快速生成Notion页面二维码</p>
+                    <div class="tags">
+                        <span class="tag">Notion</span>
+                        <span class="tag">二维码</span>
+                    </div>
+                    <a href="https://notion.so/qrcode" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>Ray.so</h3>
+                    <p>将代码转换为美观的图片分享到社交媒体</p>
+                    <div class="tags">
+                        <span class="tag">代码截图</span>
+                        <span class="tag">开发者</span>
+                    </div>
+                    <a href="https://ray.so/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+                
+                <article class="tool-card">
+                    <h3>Pollcode</h3>
+                    <p>快速创建在线投票工具</p>
+                    <div class="tags">
+                        <span class="tag">投票</span>
+                        <span class="tag">免费</span>
+                    </div>
+                    <a href="https://pollcode.com/" target="_blank" rel="noopener" class="tool-link">访问工具 →</a>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Sitemap for SEO -->
+        <section class="sitemap">
+            <h3>网站地图</h3>
+            <ul>
+                <li><a href="#file-transfer">文件传输工具</a></li>
+                <li><a href="#format-convert">格式转换工具</a></li>
+                <li><a href="#image-tools">图像处理工具</a></li>
+                <li><a href="#document-tools">文档处理工具</a></li>
+                <li><a href="#network-tools">网络工具</a></li>
+                <li><a href="#productivity">效率工具</a></li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>🔧 ToolHub - 移动端实用工具箱</p>
+        <p>精选小众但高需求的在线工具 | 完全免费 | 无需下载</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://github.com/yourusername/toolhub">GitHub</a> | 
+            <a href="#">提交工具</a> | 
+            <a href="#">关于我们</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.8rem; color: #94a3b8;">
+            © 2024 ToolHub. All rights reserved.
+        </p>
+    </footer>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID" crossorigin="anonymous"></script>
+</body>
+</html>
