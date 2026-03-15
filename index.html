@@ -7,7 +7,11 @@
     <meta name="description" content="ToolHub - A curated collection of mobile-friendly online tools. File transfer, format conversion, image processing and more. Free, no download required.">
     <meta name="keywords" content="mobile tools, online tools, file transfer, format converter, image tools, utility tools">
     <meta name="author" content="ToolHub">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow">    <!-- Performance -->
+    <meta http-equiv="Cache-Control" content="max-age=31536000, immutable">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
     <link rel="canonical" href="https://tool.tools365.it.com/">
     
     <!-- Open Graph -->
@@ -21,7 +25,8 @@
     <meta name="twitter:title" content="ToolHub - Mobile Tool Collection">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     
     <style>
         :root {
@@ -534,6 +539,35 @@
         .tools-grid .tool-card:nth-child(2) { animation-delay: 0.1s; }
         .tools-grid .tool-card:nth-child(3) { animation-delay: 0.15s; }
         .tools-grid .tool-card:nth-child(4) { animation-delay: 0.2s; }
+
+        
+        /* Navigation - Horizontal Scroll for Mobile */
+        nav{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+        nav::-webkit-scrollbar{display:none}
+        
+        /* Touch optimizations */
+        .nav-item,.tool-link{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+        
+        /* Search full width on mobile */
+        @media (max-width:640px){
+            .top-bar{flex-wrap:wrap;padding:0.75rem}
+            .search-box{max-width:none;width:100%;order:3;margin-top:0.5rem}
+            .top-bar-right{width:100%;justify-content:space-between}
+            .nav-item{padding:0.5rem 0.8rem;font-size:0.75rem}
+            .tools-grid{grid-template-columns:1fr}
+            main{padding:1rem 0.75rem}
+            .tool-card{padding:1rem}
+            .tool-link{width:100%;justify-content:center;min-height:44px}
+            .category-icon{width:36px;height:36px}
+            .logo{font-size:1.1rem}
+            .logo-icon{width:32px;height:32px}
+        }
+        
+        /* Reduced motion */
+        @media(prefers-reduced-motion:reduce){
+            *{transition:none!important;animation:none!important}
+        }
+
     </style>
 </head>
 <body>
@@ -547,11 +581,11 @@
         <div class="top-bar-right">
             <div class="search-box">
                 <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" data-en="Search tools..." data-zh="搜索工具..." placeholder="Search tools...">
+                <input type="text" id="searchInput" aria-label="Search" data-en="Search tools..." data-zh="搜索工具..." placeholder="Search tools...">
             </div>
             
             <div class="lang-switch">
-                <button class="lang-btn" id="langBtn">
+                <button class="lang-btn" id="langBtn" aria-label="Language">
                     <i class="fas fa-globe"></i>
                     <span id="currentLang">EN</span>
                     <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
@@ -565,7 +599,7 @@
     </div>
     
     <!-- Navigation -->
-    <nav>
+    <nav aria-label="Categories">
         <div class="nav-container">
             <a href="#file-transfer" class="nav-item active">
                 <i class="fas fa-folder-open"></i>
